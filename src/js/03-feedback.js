@@ -4,7 +4,6 @@ const LOCAL_KEY = 'feedback-form-state';
 
 form = document.querySelector('.feedback-form');
 
-
 form.addEventListener('input', throttle(onInputData, 500));
 form.addEventListener('submit', onFormSubmit);
 
@@ -14,7 +13,7 @@ const { email, message } = form.elements;
 console.log({ email: email.value, message: message.value });
 
 reloadPage();
-function onInputData(e) {
+function onInputData(_) {
     dataForm = { email: email.value, message: message.value };
     localStorage.setItem(LOCAL_KEY, JSON.stringify(dataForm));
 }
